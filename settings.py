@@ -20,7 +20,6 @@ def init_settings() -> None:
 
     config.set('TG', 'TG_API_ID', input('Введите идентификатор TG API (Получить можно на my.telegram.org): '))
     config.set('TG', 'TG_API_HASH', input('Введите хэш TG API (Получить можно на my.telegram.org): '))
-    config.set('TG', 'TG_BOT_TOKEN', input('Введите токен телеграм бота: '))
     config.set('TG', 'TG_CHANNEL', input('Введите идентификатор тг канала (без @): '))
 
     time = []
