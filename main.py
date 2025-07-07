@@ -15,10 +15,8 @@ DATE_FORMAT = '%d.%m.%Y'
 def main():
     settings = get_settings()
     start_date = input('Введите начальную дату для копирования постов (в формате День.Месяц.Год): ')
-    start_date = '01.05.2025'
     start_date = datetime.strptime(start_date, DATE_FORMAT)
     end_date = input('Введите конечную дату для копирования постов (в формате День.Месяц.Год): ')
-    end_date = '05.07.2025'
     end_date = datetime.strptime(end_date, DATE_FORMAT)
 
     vk = VkApi(settings.get('VK', 'VK_ACCESS_TOKEN'), settings.get('VK', 'VK_GROUP_ID'))
