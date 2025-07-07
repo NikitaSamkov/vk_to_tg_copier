@@ -21,6 +21,11 @@ def main():
 
     vk = VkApi(settings.get('VK', 'VK_ACCESS_TOKEN'), settings.get('VK', 'VK_GROUP_ID'))
     posts = vk.get_posts(start_date, end_date)
+    posts = list(reversed(posts))
+
+    if len(posts) > 100:
+        print('!!! Постов в отложке не может быть больше 100 постов, посты обрезаются до 100 !!!')
+        posts = posts[:100]
 
     tg = TgApi(settings.get('TG', 'TG_API_ID'), 
                settings.get('TG', 'TG_API_HASH'),
